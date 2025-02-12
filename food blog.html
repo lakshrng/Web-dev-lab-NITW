@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+  <title> Food Blog </title>
+
+  <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <link href='https://fonts.googleapis.com/css?family=Almendra' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .header {
+        overflow: hidden;
+        background-color: #0f0f0f;
+        padding: 20px 10px;
+      }
+
+      .header a {
+        float: left;
+        color: #f2c069;
+        text-align: center;
+        padding: 12px;
+        text-decoration: none;
+        font-size: 18px;
+        line-height: 25px;
+        border-radius: 4px;
+      }
+
+      .header a.logo {
+        font-family: "Sofia", sans-serif;
+        font-size: 50px;
+        font-weight: bold;
+        font-effect: shadow-multiple;
+      }
+
+      .header a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+
+      .header a.active {
+        background-color: gray;
+        color: #f2c069;
+      }
+
+      .header-right {
+        float: right;
+      }
+
+      @media screen and (max-width: 500px) {
+        .header a {
+          float: none;
+          display: block;
+          text-align: left;
+        }
+
+        .header-right {
+          float: none;
+        }
+      }
+
+      .h1 {
+        font-family: 'Brush Script MT', cursive;
+        color: #FFFBE0;
+        font-size: 60px;
+        text-align: center;
+      }
+
+      .p1 {
+        font-size: 30px;
+        color: #FFFBE0;
+        font-family: "Trirong", serif;
+      }
+
+      .p2 {
+        font-size: 24px;
+        font-family: 'Almendra';
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: center;
+        background-color: #0f0f0f;
+        overflow: hidden;
+      }
+
+      .navbar .tab {
+        padding: 14px 100px;
+        color: #f2c069;
+        text-decoration: none;
+        text-align: center;
+        font-size: 25px;
+        transition: background-color 0.3s ease;
+      }
+
+      .navbar .tab:hover {
+        background-color: #575757;
+        color: white;
+      }
+
+      .navbar .tab.active {
+        background-color: #4CAF50;
+        color: #f2c069;
+      }
+
+      .social-media-buttons {
+        position: relative;
+        text-align: center;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
+      }
+
+      .fa {
+        padding: 20px;
+        font-size: 30px;
+        width: 40px;
+        text-align: center;
+        text-decoration: none;
+        margin: 5px 10px;
+        border-radius: 50%;
+        transition: transform 0.3s, box-shadow 0.3s;
+        display: inline-block;
+      }
+
+      .fa-facebook,
+      .fa-twitter,
+      .fa-instagram {
+        background: #0f0f0f;
+        color: white;
+      }
+
+      .fa:hover {
+        transform: scale(1.8);
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Sticky Image Style */
+      .sticky-chef {
+        position: -webkit-sticky; /* For Safari */
+        position: sticky;
+        top: 20px; /* Adjust this value based on your needs */
+        z-index: 10;
+        width: 300px;
+        margin-top: 20px;
+        display: block;
+      }
+
+      /* Masking Effect for Chef Image */
+      .chef-image {
+        -webkit-mask-image: url(aglio-e-olio\ 2.jpg);
+        mask-image: url(aglio-e-olio\ 2.jpg);
+        background-image: url(risotto.jpg);
+        background-size: cover;
+        mask-size: cover;
+        color: transparent;
+        width: 300px;
+        height: 300px;
+      }
+
+    </style>
+  </head>
+
+  <body style="background-color:#0f0f0f; color:white; padding-left: 20px;">
+    <div class="header">
+      <a href="#default" class="logo">LR Foods</a>
+      <div class="header-right">
+        <a href="food blog.html" target="_blank">Home</a>
+        <a href="contact page.html" target="_blank">Contact</a>
+        <a href="subscribe page.html" target="_blank">Subscribe</a>
+        <a href="login page.html" target="_blank">Login</a>
+      </div>
+    </div>
+
+    <hr style="height: 2px; border-width: 5; color: white; background-color: white">
+    <h1 class="h1"> Live to Eat, Love to Eat</h1>
+
+    <div class="navbar">
+      <a href="veg recipes.html" class="tab" target="_blank">Vegetarian</a>
+      <a href="non veg recipes.html" class="tab" target="_blank">Non Vegetarian</a>
+      <a href="vegan recipes.html" class="tab" target="_blank">Vegan</a>
+      <a href="gallery.html" class="tab" target="_blank">Gallery</a>
+    </div>
+
+    <div style="display: flex; flex-direction: row; align-items: flex-start; gap: 20px; padding: 20px;">
+      <div style="width: 50%;">
+        <p class="p1">
+          Hi Everyone!
+          <br>
+          My name is Laksh Rangnekar, and I want to take you guys on a culinary journey with me!
+        </p>
+        <p class="p2">
+          Food has always been my passion. As the title says, I don't eat to survive: I survive to eat. My goal of creating this page is to share my experiences of traveling around the world and finding new recipes for you guys to try out! I would love if you guys subscribed for more updates on my latest recipes!
+          <br>
+          <br>
+          Going through the page I will show case the various kinds of cuisines and recipes all based on your needs and food habits. Hope you enjoy!
+        </p>
+      </div>
+
+      <div>
+        <div>
+        <img mask-im src="chef logo transparent.png" alt="chef" >
+        </div>
+      </div>
+    </div>
+
+    <div class="social-media-buttons">
+      <a href="https://www.facebook.com/login.php/" class="fa fa-facebook" target="_blank"></a>
+      <a href="https://x.com/GordonRamsay" class="fa fa-twitter" target="_blank"></a>
+      <a href="https://www.instagram.com/instagram/?hl=en" class="fa fa-instagram" target="_blank"></a>
+    </div>
+  </body>
+</html>
