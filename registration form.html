@@ -1,0 +1,134 @@
+
+<head>
+    <title>Registration Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            position: relative;
+        }
+        .amazon-logo {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            width: 100px;
+        }
+        marquee {
+            font-size: 18px;
+            font-weight: bold;
+            color: yellow;
+        }
+        form {
+            width: 50%;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            border: none;
+        }
+        button {
+            background-color: yellow;
+            color: black;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        img {
+            display: block;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Amazon Internship Registration</h1>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo" class="amazon-logo">
+    <marquee width="100%" direction="left" height="20px" class="blink" hspace="20">
+        REGISTRATIONS CLOSE 31ST JANUARY 2025! APPLY NOW!
+        <span style="margin-left:1in;"></span>
+        TO ORDER THE BEST PRODUCTS VISIT 
+        <a href="https://www.amazon.in/" style="color: white;">AMAZON</a>
+    </marquee>
+    <hr>
+    <h2>Personal Details</h2>
+    <form action="https://www.amazon.in/mobile-phones/b/?ie=UTF8&node=1389401031&ref_=nav_cs_mobiles" method="post" onsubmit="return validateForm()">
+        <label>First Name:</label>
+        <input type="text" name="firstname" id="firstname" required>
+
+        <label>Last Name:</label>
+        <input type="text" name="lastname" id="lastname" required>
+
+        <label>Date of Birth:</label>
+        <input type="date" name="dob" id="dob" required>
+
+        <label>Email:</label>
+        <input type="email" name="emailadd" id="emailadd" required>
+
+        <label>Mobile Number:</label>
+        <input type="number" name="mobileno" id="mobileno" required>
+
+        <label>Local Address:</label>
+        <input type="text" name="localadd" id="localadd" required>
+
+        <label>Permanent Address:</label>
+        <input type="text" name="permadd" id="permadd" required>
+
+        <label>Sex:</label><br>
+        <input type="radio" id="sex1" name="sex" value="male" required> Male
+        <input type="radio" id="sex2" name="sex" value="female" required> Female
+        <input type="radio" id="sex3" name="sex" value="other" required> Other
+
+        <h2>Academic Details</h2>
+        <label>10th Percentage:</label>
+        <input type="text" name="10th" id="10th" required>
+
+        <label>12th Percentage:</label>
+        <input type="text" name="12th" id="12th" required>
+
+        <label>B.Tech Institute:</label>
+        <input type="text" name="institute" id="institute" required>
+
+        <label>CGPA:</label>
+        <input type="text" name="cgpa" id="cgpa" required>
+
+        <h2>Job Role</h2>
+        <label>Interested Area:</label>
+        <select name="dropdown" id="field" required>
+            <option value="frontend">Front-End</option>
+            <option value="backend">Back-End</option>
+        </select>
+
+        <label>Interested Language:</label><br>
+        <input type="checkbox" id="c++" name="c++" value="c++"> C++
+        <input type="checkbox" id="java" name="java" value="java"> JAVA
+        <input type="checkbox" id="py" name="py" value="py"> Python
+
+        <label>Salary Expectation:</label>
+        <select name="dropdown" id="salary" required>
+            <option value="above10">More than 10 LPA</option>
+            <option value="above15">More than 15 LPA</option>
+            <option value="above20">More than 20 LPA</option>
+            <option value="above25">More than 25 LPA</option>
+            <option value="above50">More than 50 LPA</option>
+        </select>
+
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
