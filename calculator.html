@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e47915cc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .calculator {
+            background-color: #170c7e;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: calc(30% - 30px);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            text-align: center;
+        }
+
+        .display {
+            grid-column: span 4;
+            height: 50px;
+            background-color: #333;
+            color: rgb(240, 240, 243);
+            font-size: 2em;
+            border: none;
+            border-radius: 5px;
+            text-align: right;
+            padding: 10px;
+        }
+
+        .button {
+            background-color: #d87111;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1.5em;
+            padding: 20px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .button:hover {
+            background-color: #ddd;
+        }
+
+        .button.operator {
+            background-color: #42a0f7;
+            color: white;
+        }
+
+        .button.operator:hover {
+            background-color: #4b4743;
+        }
+
+        .button.equal {
+            background-color: #27ae60;
+            color: white;
+            grid-column: span 2;
+        }
+
+        .button.equal:hover {
+            background-color: #2ecc71;
+        }
+
+        .button.clear {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        .button.clear:hover {
+            background-color: #c0392b;
+        }
+
+    </style>
+</head>
+
+<script>
+    function Solve(val) {
+        var v = document.getElementById('res');
+        v.value += val;
+    }
+
+    function Result() {
+        var num1 = document.getElementById('res').value;
+        try {
+            var num2 = eval(num1.replace('x', '*')); // Replace 'x' with '*' for multiplication
+            document.getElementById('res').value = num2;
+        } catch {
+            document.getElementById('res').value = 'Error';
+        }
+    }
+
+    function Clear() {
+        var inp = document.getElementById('res');
+        inp.value = '';
+    }
+
+    function Back() {
+        var ev = document.getElementById('res');
+        ev.value = ev.value.slice(0, -1);
+    }
+</script>
+
+<body style="background-color:#0f0f0f; color:rgb(212, 22, 22);">
+
+    <div class="calculator">
+        <input type="text" class="display" id="res" readonly/>
+        <button class="button clear" onclick="Clear()" id="clear">C</button>
+        <button class="button operator" onclick="Solve('/')">/</button>
+        <button class="button operator" onclick="Solve('*')">*</button>
+        <button class="button operator" onclick="Solve('-')">-</button>
+
+        <button class="button" onclick="Solve('7')">7</button>
+        <button class="button" onclick="Solve('8')">8</button>
+        <button class="button" onclick="Solve('9')">9</button>
+        <button class="button operator" onclick="Solve('+')">+</button>
+
+        <button class="button" onclick="Solve('4')">4</button>
+        <button class="button" onclick="Solve('5')">5</button>
+        <button class="button" onclick="Solve('6')">6</button>
+        <button class="button operator" onclick="Solve('%')">%</button>
+
+        <button class="button" onclick="Solve('1')">1</button>
+        <button class="button" onclick="Solve('2')">2</button>
+        <button class="button" onclick="Solve('3')">3</button>
+        <button class="button clear" onclick="Back()" id="backspace">Back</button>
+        <button class="button equal" onclick="Result()">=</button>
+
+        <button class="button" onclick="Solve('0')">0</button>
+        <button class="button" onclick="Solve('.')">.</button>
+    </div>
+
+</body>
+</html>
