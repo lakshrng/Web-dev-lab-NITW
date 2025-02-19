@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Shafarik&family=Sigmar&display=swap" rel="stylesheet">
+  <title>Movie List</title>
+</head>
+<style>
+    body {
+    background-image: url(https://wallpapers.com/images/hd/movie-poster-background-p5qblffj7cvswl5g.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1{
+    font-family: "Sigmar", serif;
+  font-weight: 400;
+  font-style: normal;
+    color:black;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.boxtext {
+    margin-bottom: 100px;
+  text-align: center;
+  background-color:rgba(255, 255, 255, 0.7);
+  padding: 17px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+input, button {
+background-color: white;
+
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  border-radius: 50px;
+  border-style: solid;
+  border: 2px solid #080808;
+}
+
+input {
+    color: rgb(0, 0, 0);
+  width: 250px;
+}
+input::placeholder {
+    font-family: "Bebas Neue", serif;
+  font-weight: 400;
+  font-style: normal;
+    font-size: larger;
+  color: #0a0a0a; 
+}
+button {
+    font-family: "Bebas Neue", serif;
+  font-weight: 400;
+  font-style: normal;
+    font-size: larger;
+  background-color: #cbd80f;
+  color: rgb(19, 19, 20);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0fd119;
+}
+
+#movie-list {
+text-align: center;
+justify-content: center;
+  align-items: center;
+  list-style-type: square;
+  padding: 0;
+  background-color: #0fd119; 
+  border-radius: 8px;
+  margin-top: 20px;
+  margin-left: 226px;
+  width: 20%;
+  max-width: 350px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+}
+
+#movie-list li {
+    
+  margin: 10px 0;
+  cursor: pointer;
+  font-family: "Shafarik", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #070707;
+  font-size: larger;
+}
+
+
+#clear-list-btn {
+  background-color: #ff4c4c;
+}
+
+#clear-list-btn:hover {
+  background-color: #e63c3c;
+}
+
+p {
+  font-size: 18px;
+  margin-right: auto;
+  font-weight: bold;
+  color: #080808;
+}
+</style>
+<body>
+  <div class="boxtext">
+    <h1>Remember your favorite movies!</h1>
+    <input type="text" id="moviename" placeholder="Enter a movie name">
+    <button id="addmovie">Add to list</button>
+    <ul id="movie-list"></ul>
+    <p id="total-movies">Total Movies: 0</p>
+    <button id="clear-list-btn">Clear List</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+<script>
+const movies = [];
+
+const movieInput = document.getElementById('moviename');
+const addMovieBtn = document.getElementById('addmovie');
+const movieList = document.getElementById('movie-list');
+const totalMovies = document.getElementById('total-movies');
+const clearListBtn = document.getElementById('clear-list-btn');
+
+function changeList() {
+  movieList.innerHTML = ''; 
+  movies.forEach((movie, index) => {
+    const li = document.createElement('li');
+    li.textContent = movie;
+    li.addEventListener('click', () => {
+      movies.splice(index, 1); 
+      changeList(); 
+      changeMovienum(); 
+    });
+    movieList.appendChild(li);
+  });
+  changeMovienum();
+}
+
+function changeMovienum() {
+  totalMovies.textContent = `Total Movies: ${movies.length}`;
+}
+
+addMovieBtn.addEventListener('click', () => {
+  const movieName = movieInput.value.trim();
+  
+  if (movieName) {
+    movies.push(movieName); 
+    movieInput.value = ''; 
+    changeList(); 
+  } else {
+    alert('Please enter a movie name');
+  }
+});
+
+clearListBtn.addEventListener('click', () => {
+  movies.length = 0; 
+  changeList(); 
+});
+
+changeList();
+</script>
+</html>
+
